@@ -1,0 +1,49 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-standard",
+    "tslint-config-prettier"
+  ],
+  "jsRules": {
+  },
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  },
+  "rules": {
+    "quotemark": [true, "single", "jsx-double"],
+    "indent": [true, "spaces", 2],
+    "member-access": [true, "check-parameter-property"],
+    "ordered-imports": true,
+    "member-ordering": [true, {"order": "fields-first"}],
+    "interface-name": false,
+    "max-line-length": false,
+    "max-classes-per-file": false,
+    "object-literal-sort-keys": false,
+    "type-literal-delimiter": true,
+    "no-duplicate-imports": false,
+    "no-parameter-reassignment": false,
+    "only-arrow-functions": [true, "allow-declarations", "allow-named-functions"],
+    "ban-comma-operator": true,
+    "curly": [true, "ignore-same-line"],
+    "no-bitwise": true,
+    "arrow-return-shorthand": true,
+    "callable-types": true,
+    "class-name": true,
+    "no-conditional-assignment": true,
+    "prefer-const": true,
+    "no-console": false,
+    "no-extra-boolean-cast": false,
+    "no-empty-interface": true,
+    "strict-type-predicates": false,
+    "no-magic-numbers": [true, {"allowed-numbers": [-1, 0, 1, 2, 3, 100, 1000], "ignore-jsx": true}],
+    "array-type": [true, "generic"],
+    "no-empty": false,
+    "no-var-requires": false,
+    "semicolon": [true, "always"],
+    "whitespace": [true, "check-branch", "check-operator", "check-typecast"]
+  },
+  "rulesDirectory": []
+}

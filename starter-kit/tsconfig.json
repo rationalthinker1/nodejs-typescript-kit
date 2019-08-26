@@ -1,20 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "lib": ["es2015", "dom"],
-    "allowJs": true,
-    "sourceMap": true,
-    "outDir": "dist",
-    "strict": true,
-    "noImplicitAny": true,
     "moduleResolution": "node",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "declaration": false,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "jsx": "react",
+    "sourceMap": true,
     "baseUrl": "./",
-    "paths": {
-      "*": ["node_modules/@types/*", "src/types/*"]
-    },
-    "esModuleInterop": true
+    "lib": [
+      "es6",
+      "es7",
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.test.ts", "**/*.test.js", "src/types"]
+  "files": [
+    "./custom.d.ts"
+  ],
+  "exclude": ["build", "node_modules"]
 }

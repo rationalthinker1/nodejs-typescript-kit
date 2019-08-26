@@ -15,8 +15,6 @@ node_modules
 workspace.xml
 tasks.xml
 
-ormconfig.json
-
 .module-cache
 *.log*
 build

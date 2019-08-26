@@ -6,8 +6,13 @@
   "author": "",
   "license": "",
   "scripts": {
+    "compile": "ts-node --files -r tsconfig-paths/register",
     "build": "tsc",
-    "lint": "eslint ./src --ext .ts,.js --fix",
+    "format": "prettier --write '{src,database,bootstrap,client/src,client/src}/**/*.{js,jsx,ts,tsx}'",
+    "lint": "tslint --fix -p tsconfig.json -c tslint.json '{src,database,bootstrap,client/src}/**/*.{ts,tsx}'",
+    "start": "yarn run compile src/index.ts",
+    "start:dev": "nodemon",
+    "debug": "nodemon --config nodemon-debug.json",
     "test": "jest",
     "test:watch": "jest --watchAll",
     "ts-node": "ts-node",
@@ -15,41 +20,43 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.3.3",
-    "@babel/preset-env": "^7.3.1",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-typescript": "^7.3.3",
-    "@types/jest": "^24.0.0",
-    "@types/node": "^10.12.21",
-    "@typescript-eslint/eslint-plugin": "^1.3.0",
-    "@typescript-eslint/parser": "^1.3.0",
-    "babel-jest": "^24.1.0",
-    "eslint": "^5.14.0",
-    "eslint-config-prettier": "^4.0.0",
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.2",
+    "@typescript-eslint/eslint-plugin": "^2.0.0",
+    "@typescript-eslint/parser": "^2.0.0",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.2.2",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.1.0",
     "eslint-import-resolver-typescript": "^1.1.1",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-react": "^7.12.4",
-    "husky": "^1.3.1",
-    "jest": "^24.1.0",
-    "lint-staged": "^8.1.4",
-    "nodemon": "^1.18.9",
-    "prettier": "^1.16.4",
-    "pretty-quick": "^1.10.0",
-    "ts-jest": "^23.10.5",
-    "ts-node": "^8.0.2",
-    "typescript": "^3.3.1"
+    "eslint-loader": "^3.0.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jest": "^22.5.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.4",
+    "jest": "^24.9.0",
+    "lint-staged": "^9.2.4",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.3"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "yarn lint && yarn format"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts}": [
-      "eslint ./src --ext .ts,.js --fix",
-      "pretty-quick",
-      "git add"
-    ]
   }
 }
