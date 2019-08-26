@@ -40,7 +40,8 @@ const editFiles = async projectName => {
   file.set('name', projectName);
   file.save();
 
-  fs.rename(
+  fs.unlinkSync(`${__dirname}/starter-kit/.gitignore`);
+  fs.copyFile(
     `${__dirname}/starter-kit/gitignore`,
     `${__dirname}/starter-kit/.gitignore`,
     function (err) {
