@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "repository": "",
   "author": "",
-  "license": "",
+  "license": "Apache-2.0",
   "scripts": {
     "compile": "ts-node --files -r tsconfig-paths/register",
     "build": "tsc",
